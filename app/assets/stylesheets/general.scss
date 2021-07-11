@@ -1,0 +1,15 @@
+// application wide styles
+@import 'constants';
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $light-grey;
+
+  :visited {
+    color: $light-grey;
+  }
+}
