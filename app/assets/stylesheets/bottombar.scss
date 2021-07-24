@@ -1,0 +1,22 @@
+// Css styles for the topbar
+@import 'constants';
+
+#bottom-bar {
+  background-color: $dark-grey;
+  line-height: 3rem;
+  text-align: center;
+  color: $light-grey;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    margin: 0;
+    font-size: 1.2em;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+
+    &:hover { background-color: $hover-grey; }
+  }
+}

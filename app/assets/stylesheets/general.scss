@@ -6,16 +6,16 @@ html, body {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  background-color: $black;
+  background-color: $dark-grey;
   background-size: cover;
 }
 
 a {
   text-decoration: none;
-  color: $black;
+  color: $light-grey;
 
   :visited {
-    color: $black;
+    color: $light-grey;
   }
 }
 
@@ -44,6 +44,10 @@ a {
   padding: .5rem;
   color: $light-grey;
   border-radius: 5px;
+
+  &:hover {
+    background-color: $hover-grey;
+  }
 }
 
 .content {
