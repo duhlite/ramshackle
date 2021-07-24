@@ -1,0 +1,22 @@
+// Css styles for the home page
+@import 'constants';
+
+#homepage {
+
+  .sub-title {
+    padding-top: 3rem;
+    text-align: center;
+    color: $black;
+    font-size: $logo-font-size;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    margin-top: 1rem;
+  }
+
+  .action-buttons {
+    padding-top: 5rem;
+    text-align: center;
+  }
+}
