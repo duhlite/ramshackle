@@ -3,11 +3,12 @@
 
 html, body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
   background-color: $dark-grey;
   background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -21,10 +22,9 @@ a {
 
 #main {
   margin: 0px;
-  padding-top: 1rem;
+  padding: 1rem;
   color: $black;
-  height: 100vh;
-  width: 100vw;
+  min-height: 90vh;
   background-image: image-url('farm_background.jpg');
   background-size: cover;
   background-position-x: center;
@@ -51,9 +51,10 @@ a {
 }
 
 .content {
-  margin: 2rem 3rem 2rem 3rem;
+  margin: 2rem auto 0px auto;
   padding: 2rem;
   background-color: rgba(255,255,255,0.8);
   border-radius: 10px;
-  min-height: 500px;
+  font-size: $standard-font-size;
+  max-width: 700px;
 }

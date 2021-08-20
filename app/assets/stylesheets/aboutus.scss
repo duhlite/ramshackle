@@ -1,0 +1,22 @@
+// Styles for the About Us page
+@import 'constants';
+
+#about-us  {
+  text-align: justify;
+
+  p {
+    margin: 0px;
+  }
+
+  ul {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+
+    li {
+      list-style: none;
+      font-style: normal;
+      font-weight: normal;
+    }
+  }
+}

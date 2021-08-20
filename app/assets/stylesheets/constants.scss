@@ -7,7 +7,7 @@ $dark-grey: #363636;
 $hover-grey: #505050;
 
 // Font Sizes
-$standard-font-size: 1em;
+$standard-font-size: 1.4em;
 $large-font-size: 1.6em;
 $logo-font-size: 2em;
 $title-font-size: 3em;
@@ -15,3 +15,9 @@ $title-font-size: 3em;
 // Spaces
 $standard-space: .5rem;
 $large-space: 2rem;
+
+// Fonts
+@font-face {
+  font-family: 'Capture it';
+  src: url('capture_it.ttf');
+}
