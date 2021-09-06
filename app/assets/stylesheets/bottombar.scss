@@ -6,17 +6,26 @@
   line-height: 3rem;
   text-align: center;
   color: $light-grey;
+  font-size: 1.2em;
 
   p {
-    margin: 0;
+    display: inline-block;
+    margin: 0 0 0 1rem;
+    text-align: left;
   }
 
   a {
+    display: inline-block;
     margin: 0;
-    font-size: 1.2em;
-    padding: .5rem 1rem;
+    padding: .2rem 1rem;
     border-radius: 5px;
 
     &:hover { background-color: $hover-grey; }
+
+    img {
+      height: 24px;
+      width: 24px;
+      vertical-align: middle;
+    }
   }
 }

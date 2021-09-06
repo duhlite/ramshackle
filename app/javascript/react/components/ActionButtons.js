@@ -5,7 +5,7 @@ export const ActionButtons = () => {
   return (
     <div className="action-buttons">
       <Link className="button" to="/about">About Us</Link>
-      <Link className="button" to="/news">What's New</Link>
+      <a className="button" href="https://www.instagram.com/ramshackle_farm/">What's New</a>
     </div>
   )
 }

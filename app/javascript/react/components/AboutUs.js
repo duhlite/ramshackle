@@ -18,15 +18,16 @@ export const AboutUs = (props) => {
           <br></br>
           <br></br>
         </p>
-        <ul>
-          We are:
-          <li>Farming in a human scale</li>
-          <li>Committed to food sovereignty</li> 
-          <li>Educating tiny farmers</li>
-          <li>Embracing the community</li>
-          <li>Punk Rock</li>
-
-        </ul>
+        <div className="list">
+          <ul>
+            We are:
+            <li>Farming in a human scale</li>
+            <li>Committed to food sovereignty</li> 
+            <li>Educating tiny farmers</li>
+            <li>Embracing the community</li>
+            <li>Punk Rock</li>
+          </ul>
+        </div>
       </div>
     </div>
   )
