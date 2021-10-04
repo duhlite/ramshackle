@@ -1,0 +1,54 @@
+// Stylesheet for the forms on the application
+@import 'constants';
+
+#sign-up, #log-in, #order-form {
+  .content{
+    max-width: 400px;
+    padding-bottom: 70px;
+  }
+
+  .form-row {
+    padding-top: 1rem;
+    max-width: 300px;
+    margin: 0px auto;
+  }
+
+  .button {
+    float: right;
+    clear: both;
+  }
+
+  .form-box {
+    max-width: 140px;
+    display: inline-block;
+    
+    &:first-of-type {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    &:last-of-type {
+      margin-right: auto;
+    }
+  }
+
+  .error {
+    padding-left: 5px;
+    color: $error-red;
+    font-size: 12px;
+
+    &:not(:empty) + input {
+      border-color: $error-red;
+    }
+
+    &:not(:empty) + select {
+      border-color: $error-red;
+    }
+  }
+}
+
+#order-confirmation {
+  .actions {
+    text-align: center;
+  }
+}

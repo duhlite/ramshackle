@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ramshackle Admin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <div id="admin-topbar">
+      <p>Ramshackle Admin</p>
+      <%= link_to "Users", admin_users_path %>
+      <%= link_to 'Application Home', root_path %>
+    </div>
+    <div id="admin-content">
+      <%= yield %>
+    <dv>
+    <%- if Rails.env.development? || Rails.env.test? -%>
+      <%= javascript_tag do %>
+        window.railsEnv = '<%= Rails.env %>'
+      <%- end -%>
+    <%- end -%>
+    <%= yield :extra_footer %>
+  </body>
+</html>

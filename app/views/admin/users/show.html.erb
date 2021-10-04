@@ -1,0 +1,19 @@
+<h1><%= "#{@resource.first_name} #{@resource.last_name}" %></h1>
+<p>Email: <%= @resource.email %></p>
+<p>Date Created: <%= @resource.created_at.strftime("%B %d, %Y") %></p>
+<h3>Addresses</h3>
+<% @addresses.each do |address| %>
+  <p>
+    <%= address.line_one %>
+    <% if address.line_two %>
+      , <%= address.line_two %>
+    <% end %>
+  </p>
+  <p>
+    <%= address.city %>, 
+    <%= address.state %> 
+    <%= address.zip %>
+  </p>
+  <p>Registered: <%= address.created_at.strftime("%B %d, %Y") %></p>
+  <br/>
+<% end %>

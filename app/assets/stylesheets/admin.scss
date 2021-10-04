@@ -1,0 +1,50 @@
+// Styles for the admin pages
+@import 'constants';
+
+#admin-topbar {
+  margin: 0;
+  width: 100vw;
+  background-color: $dark-grey;
+  color: $light-grey;
+  padding-left: 1rem;
+  height: 4rem;
+  position: sticky;
+  top: 0px;
+
+  p, a {
+    display: inline-block;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1rem;
+  }
+}
+
+#admin-content {
+  padding: 2rem;
+  background-color: rgba(255,255,255,0.8);
+  font-size: $standard-font-size;
+
+  table {
+    border: 1px solid $dark-grey;
+
+    th, td {
+      margin: 0px;
+      padding: 5px;
+      border-bottom: 1px solid $dark-grey;
+      border-right: 1px solid $dark-grey;
+
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+
+    tr:last-of-type td {
+      border-bottom: none;
+    }
+  }
+
+  a {
+    color: $dark-green;
+  }
+}

@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 # Log on and Authentication
 gem 'devise'
 
+# validate zipcodes for addresses
+gem 'validates_zipcode'
+
 gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
