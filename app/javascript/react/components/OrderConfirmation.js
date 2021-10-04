@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export const OrderConfirmation = (props) => {
   return (
     <div id="order-confirmation">
-      <h1 className="title">Thank You For Your Order</h1>
+      <h1 className="title">Thank You</h1>
       <div className="actions">
         <Link className="button" to="/">Home</Link>
       </div>

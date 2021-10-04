@@ -5,7 +5,7 @@ class Admin::AdminController < ApplicationController
   private
   def check_admin
     unless current_user.admin
-      redirect_to root
+      redirect_to root_path
     end
   end
 end

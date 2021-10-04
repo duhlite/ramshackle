@@ -7,7 +7,7 @@ export const ActionButtons = () => {
       <Link className="button" to="/about">About Us</Link>
       <a className="button" href="https://www.instagram.com/ramshackle_farm/">What's New</a>
       <div className="call-to-action">
-        <Link className="button call-to-action" to="/order">Winter Lettuce CSA - Preorder Here</Link>
+        <Link className="button call-to-action" to="/order">Winter Lettuce CSA</Link>
       </div>
     </div>
   )
