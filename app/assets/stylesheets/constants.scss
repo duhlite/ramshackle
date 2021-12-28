@@ -22,5 +22,5 @@ $large-space: 2rem;
 // Fonts
 @font-face {
   font-family: 'Capture it';
-  src: url('capture_it.ttf');
+  src: font-url('capture_it.ttf') format('truetype');
 }
