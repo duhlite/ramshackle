@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 
 // Component to display the Instagram feed for the farm
@@ -6,6 +6,7 @@ export const OrderForm = (props) => {
   const [formInfo, setFormInfo] = useState({address: {line_one: "", line_two: "", city: "", state: "", zip: ""}})
   const [redirect, setRedirect] = useState(false)
   const [errors, setErrors] = useState(null)
+  const [promoInfo, setPromoInfo] = useState(null)
 
   const stateNames = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
@@ -14,6 +15,24 @@ export const OrderForm = (props) => {
       <option key={state}>{state}</option>
     )
   })
+
+  useEffect(() => {
+    fetch('/promotions')
+    .then((response) => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage)
+        throw(error)
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      setPromoInfo(body)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }, [])
 
   const handleChange = event => {
     const field = event.currentTarget.name
@@ -93,9 +112,9 @@ export const OrderForm = (props) => {
 
   return (
     <div id="order-form">
-      <h1 className="title">Winter Lettuce CSA</h1>
+      <h1 className="title">{promoInfo?.name}</h1>
       <div className="content">
-        <p>Winter lettuce CSA is coming soon. Fill out the form to be notified when we launch to receive an introductory discount.</p>
+        <p>{promoInfo?.description}</p>
         <form id="order-form" className="user-form" onSubmit={handleSubmit}>
           {guestFields}
           <div className="form-row">

@@ -25,6 +25,16 @@
   background-color: rgba(255,255,255,0.8);
   font-size: $standard-font-size;
 
+  .error {
+    padding-left: 5px;
+    color: $error-red;
+    font-size: 12px;
+  }
+
+  .new-link + div {
+    padding-top: 1rem;
+  }
+
   table {
     border: 1px solid $dark-grey;
 
@@ -46,5 +56,27 @@
 
   a {
     color: $dark-green;
+  }
+
+  form {
+    input {
+      max-width: 500px;
+      margin-bottom: 2rem;
+
+      &.no-margin {
+        margin: 0;
+      }
+    }
+
+    textarea {
+      height: 100px;
+      width: 80%;
+      margin-bottom: 2rem;
+    }
+
+    .checkbox-label input {
+      display: inline-block;
+      width: auto;
+    }
   }
 }

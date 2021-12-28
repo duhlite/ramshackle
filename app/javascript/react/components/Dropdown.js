@@ -19,6 +19,7 @@ export const Dropdown = (props) => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About Us</Link></li>
         <li><a href="https://www.instagram.com/ramshackle_farm/">Farm News</a></li>
+        <li><a href="https://ramshackle-farm.square.site/">Shop</a></li>
         {adminLink}
       </ul>
     </div>

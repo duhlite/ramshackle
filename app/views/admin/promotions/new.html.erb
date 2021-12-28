@@ -1,0 +1,20 @@
+<h1>New Promotion</h1>
+<% if @error %>
+  <p class="error"><%= @error %></p>
+<% end %>
+<%= form_with model: [:admin, @promotion] do |form| %>
+  <label>Name (callout button text)
+    <%= form.text_field :name %>
+  </label>
+  <label>URL (use '/order' for internal order form)
+    <%= form.text_field :url %>
+  </label>
+  <label>Description (for internal order form, otherwise leave blank)<br/>
+    <%= form.text_area :description %>
+  </label><br/>
+  <label class="checkbox-label">Set as Active Promotion
+    <%= form.check_box :active %>
+  </label>
+  <br/>
+  <%= form.submit %>
+<% end %>
