@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index]
   resources :addresses, only: [:create]
+  resources :promotions, only: [:index]
 
   namespace :admin do
     resources :users, only: [:index, :show]
     resources :guests, only: [:show]
+    resources :promotions
   end
 end

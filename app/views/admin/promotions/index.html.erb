@@ -1,0 +1,28 @@
+<h1>Promotions</h1>
+<%= link_to "Add New Promotion", new_admin_promotion_url, class: "new-link" %>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name (callout button text)</th>
+        <th>URL (use '/order' for internal order form)</th>
+        <th>Description (for internal order form, otherwise leave blank)</th>
+        <th>Active</th>
+        <th>Set Active</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @promotions.each do |promo| %>
+        <tr>
+          <td><%= link_to promo.name, edit_admin_promotion_path(promo) %></td>
+          <td><%= promo.url %></td>
+          <td><%= promo.description %></td>
+          <td><%= promo.active %></td>
+          <td><%= button_to "Toggle Active", [:admin, promo], method: "patch", params: {promotion: {active: true}}, class: "no-margin" %></td>
+          <td><%= link_to "Delete Promotion", [:admin, promo], method: "delete", confirm: "Are you sure?" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
