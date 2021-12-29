@@ -1,19 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import UserIcon from 'images/user-icon.svg'
 
 // Child components
 import Dropdown from './Dropdown'
 
 // Component to display the Topbar of the website
 export const TopBar = (props) => {
-  const handleDropdownChange = (event) => {
-    if ((event.target.textContent !== 'Menu') || (props.dropdownVisible === "visible")) {
-      props.setDropdownVisible("hidden")
-    } else {
-      props.setDropdownVisible("visible")
-    }
-  }
-
   const handleLogOut = (event) => {
     event.preventDefault()
     fetch("/users/sign_out", {
@@ -42,30 +35,30 @@ export const TopBar = (props) => {
   }
 
   let userLinks = (
-    <div className="user-links">
-      <Link className="log-in" to="/log_in">Log In</Link>
+    <div className="user-dropdown">
+      <Link className="log-in" to="/log_in">Log In</Link><br/>
       <Link className="sign-up" to="/sign_up">Create Account</Link>
     </div>
   )
   if (props.user !== null) {
     userLinks = (
-      <div className="user-links">
-        <p>Welcome, {props.user.firstName}</p>
+      <div className="user-dropdown">
         <p className="log-out" onClick={handleLogOut}>Log Out</p>
       </div>
     )
   }
 
   return (
-    <div id="topbar" onClick={handleDropdownChange}>
+    <div id="topbar">
       <Link className="logo" to="/">RS Farm</Link>
       <p id="menu">Menu</p>
       <Dropdown 
-        visible={props.dropdownVisible}
-        handleChange={handleDropdownChange}
         admin={props.user?.admin}
       />
-      {userLinks}
+      <div className="icon-div">
+        <img src={UserIcon} alt="User Actions" className="user-icon"></img>
+        {userLinks}
+      </div>
     </div>
   )
 }

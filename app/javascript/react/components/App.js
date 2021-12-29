@@ -14,7 +14,6 @@ import OrderConfirmation from './OrderConfirmation'
 
 // Main App, displays topbar regardless of the route, then changes the displayed component
 export const App = (props) => {
-  const [dropdownVisible, setDropdownVisible] = useState("hidden")
   const [user, setUser] = useState(null)
 
   useEffect(() => {
@@ -35,19 +34,13 @@ export const App = (props) => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
-  const handleClick = () => {
-    setDropdownVisible("hidden")
-  }
-
   return (
     <BrowserRouter>
       <TopBar
-        dropdownVisible={dropdownVisible}
-        setDropdownVisible={setDropdownVisible}
         user={user}
         setUser={setUser}
       />
-      <div id="main" onClick={handleClick}>
+      <div id="main">
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/home" component={HomePage} />
@@ -65,7 +58,7 @@ export const App = (props) => {
           <Route exact path="/order_confirmation" component={OrderConfirmation} />
         </Switch>
       </div>
-      <div onClick={handleClick}>
+      <div>
         <BottomBar/>
       </div>
     </BrowserRouter>
