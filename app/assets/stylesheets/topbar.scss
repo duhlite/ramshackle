@@ -8,8 +8,9 @@
   color: $light-grey;
   padding-left: 1rem;
   height: 4rem;
-  position: sticky;
+  position: relative;
   top: 0px;
+  display: flex;
 
   p, a {
     display: inline-block;
@@ -23,7 +24,7 @@
     line-height: 4rem;
     padding: 0 .5rem;
     border-radius: 5px;
-    vertical-align: bottom;
+    vertical-align: top;
     font-family: 'Capture it';
   
     &:hover { background-color: $hover-grey; }
@@ -31,7 +32,7 @@
 
   #menu, .log-in, .sign-up, .log-out {
     font-size: $large-font-size;
-    vertical-align: bottom;
+    vertical-align: top;
     line-height: 4rem;
     padding: 0 1rem;
     border-radius: 5px;
@@ -39,14 +40,16 @@
     &:hover { background-color: $hover-grey; }
   }
 
-  #dropdown {
+  .dropdown, .user-dropdown {
     position: absolute;
     background-color: $dark-grey;
-    left: 9.8rem;
+    left: 9.7rem;
     border-radius: 0 0 .4rem .4rem;
+    display: none;
+    top: 4rem;
 
-    &.hidden {
-      display: none;
+    &:hover {
+      display: inherit;
     }
 
     ul {
@@ -68,14 +71,44 @@
     }
   }
 
-  .user-links {
-    float: right;
-    padding-right: 2rem;
+  .icon-div {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 0px;
+    padding-right: 3rem;
+  }
 
-    p {
-      font-size: $large-font-size;
-      vertical-align: bottom;
-      line-height: 4rem;
+  .user-icon {
+    height: 3rem;
+    padding: .5rem;
+    border-radius: 5px;
+
+    &:hover { background-color: $hover-grey; }
+    &:hover + .user-dropdown {
+      display: block;
+    }
+  }
+
+  .user-dropdown {
+    left: unset;
+    right: 2.9rem;
+    display: none;
+
+    p, a {
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      line-height: unset;
+      width: -moz-available;          /* WebKit-based browsers will ignore this. */
+      width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+      width: fill-available;
+    }
+  }
+
+  #menu {
+    cursor: default;
+
+    &:hover + .dropdown {
+      display: inherit;
     }
   }
 }

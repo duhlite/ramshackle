@@ -14,7 +14,7 @@ export const Dropdown = (props) => {
   }
 
   return (
-    <div id="dropdown" className={props.visible}  onClick={props.handleChange}>
+    <div id="dropdown" className="dropdown">
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About Us</Link></li>

@@ -4,9 +4,12 @@
 #bottom-bar {
   background-color: $dark-grey;
   line-height: 3rem;
-  text-align: center;
   color: $light-grey;
   font-size: 1.2em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 
   p {
     display: inline-block;
